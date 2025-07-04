@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-blue: #0d3b66;
+  --color-gold: #bf9e4b;
+  --color-white: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+/* If you have Adam.CG Pro, place it in /public/fonts/AdamCGPro.woff and uncomment below */
+/*
+@font-face {
+  font-family: 'AdamCGPro';
+  src: url('/fonts/AdamCGPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+body {
+  font-family: 'Montserrat', 'AdamCGPro', Arial, sans-serif;
+  background: var(--color-white);
+  color: var(--color-blue);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'AdamCGPro', 'Montserrat', Arial, sans-serif;
+  color: var(--color-blue);
+}
+
+a {
+  color: var(--color-blue);
+}
+
+nav {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
