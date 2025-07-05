@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 845.71 816.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #0d3b66;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="53.81" y1="-4.89" x2="776.63" y2="804.05" gradientUnits="userSpaceOnUse">
+      <stop offset=".06" stop-color="#e8dea4"/>
+      <stop offset=".44" stop-color="#bf9e4b"/>
+      <stop offset="1" stop-color="#e8dea4"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-1" width="845.71" height="816.25"/>
+    <g>
+      <polygon class="cls-2" points="467.48 393.48 467.48 290.77 340.18 216.85 340.18 599.4 346.22 599.4 346.22 227.35 461.43 294.25 461.43 393.48 467.48 393.48 467.48 393.48"/>
+      <polygon class="cls-2" points="425.88 599.4 425.88 290.77 298.57 216.85 298.57 599.4 304.62 599.4 304.62 227.35 419.83 294.25 419.83 599.4 425.88 599.4 425.88 599.4"/>
+      <polygon class="cls-2" points="425.88 599.4 425.88 419.38 541.09 352.48 541.09 599.4 547.13 599.4 547.13 341.98 419.83 415.9 419.83 599.4 425.88 599.4 425.88 599.4"/>
+    </g>
+  </g>
+</svg>

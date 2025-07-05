@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="mb-2 sm:mb-3 text-sm sm:text-base font-medium">Contact us</p>
             <a 
               href="mailto:team@stillpointproperty.com" 
-              className="text-white hover:text-primary-gold transition-colors duration-200 text-sm sm:text-base underline focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1"
+              className="text-white hover:text-primary-gold transition-colors duration-200 text-sm sm:text-base underline focus:outline-none rounded px-1 py-1"
             >
               team@stillpointproperty.com
             </a>
@@ -36,13 +36,13 @@ export default function Footer() {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-blue-700">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 text-sm">
-              <a href="/about" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+              <a href="/about" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none rounded px-1 py-1">
                 About Us
               </a>
-              <a href="/benefits" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+              <a href="/benefits" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none rounded px-1 py-1">
                 Corporate Benefits
               </a>
-              <a href="/faqs" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+              <a href="/faqs" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none rounded px-1 py-1">
                 Client FAQs
               </a>
             </div>

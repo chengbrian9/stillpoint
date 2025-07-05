@@ -46,14 +46,8 @@ export const focusManagement = {
   
   skipLinkFocus: {
     left: '6px',
-    top: '6px'
-  },
-
-  // Focus ring styles
-  focusRing: {
-    outline: '2px solid #005fcc',
-    outlineOffset: '2px',
-    borderRadius: '4px'
+    top: '6px',
+    outline: 'none'
   }
 };
 

@@ -58,11 +58,11 @@ nav {
   border: 0;
 }
 
-/* Focus styles for better accessibility */
+/* Focus styles for better accessibility
 *:focus {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
-}
+} */
 
 /* Text truncation utilities */
 .line-clamp-2 {

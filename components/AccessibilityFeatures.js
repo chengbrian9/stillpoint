@@ -58,6 +58,7 @@ const AccessibilityFeatures = () => {
           font-size: 14px;
           font-weight: bold;
           border-radius: 4px;
+          outline: none;
         }
         
         .sr-only {

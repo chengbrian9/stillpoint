@@ -21,7 +21,7 @@ export default function Home() {
       <div 
         className="relative w-full bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-[500px] flex items-center justify-center mb-8 sm:mb-12"
         style={{
-          backgroundImage: 'linear-gradient(rgba(13, 59, 102, 0.7), rgba(13, 59, 102, 0.7)), url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1500&q=80)',
+          backgroundImage: 'url("/Asset 2.webp")',
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
         }}
       >
@@ -34,7 +34,7 @@ export default function Home() {
           </p>
           <a 
             href="#listings" 
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-primary-blue font-medium bg-white hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-blue"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-primary-blue font-medium bg-white hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none"
             style={{ borderBottom: '3px solid var(--color-gold)' }}
           >
             View Listings
@@ -65,7 +65,7 @@ export default function Home() {
           </p>
           <a 
             href="mailto:team@stillpointproperty.com" 
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-white font-medium bg-primary-blue hover:bg-primary-blue/90 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-white font-medium bg-primary-blue hover:bg-primary-blue/90 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none"
             style={{ borderBottom: '3px solid var(--color-gold)' }}
           >
             Contact Us Today

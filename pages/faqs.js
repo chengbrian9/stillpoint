@@ -64,7 +64,7 @@ export default function FAQs() {
           {faqs.map((faq, idx) => (
             <div key={idx} className="mb-4">
               <button
-                className={`w-full text-left p-3 sm:p-4 rounded-lg flex justify-between items-center transition-all duration-300 min-h-touch focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 ${
+                className={`w-full text-left p-3 sm:p-4 rounded-lg flex justify-between items-center transition-all duration-300 min-h-touch focus:outline-none ${
                   openIndex === idx 
                     ? 'bg-primary-blue text-white' 
                     : 'bg-gray-50 text-gray-900 hover:bg-gray-100'
