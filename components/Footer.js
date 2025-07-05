@@ -5,7 +5,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-primary-blue text-white py-8 sm:py-12 lg:py-16 mt-12 sm:mt-16 lg:mt-20 border-t-4 border-primary-gold">
+    <footer 
+      className="bg-primary-blue text-white py-8 sm:py-12 lg:py-16 mt-12 sm:mt-16 lg:mt-20 border-t-4 border-primary-gold"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6 sm:gap-8">
           <div className="text-center sm:text-left">

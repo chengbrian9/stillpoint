@@ -1,9 +1,26 @@
 // pages/about.js
 import React from 'react';
+import SEO from '../components/SEO';
+import { organizationSchema, generateBreadcrumbSchema } from '../utils/structuredData';
 
 export default function About() {
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' }
+  ];
+
   return (
-    <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <>
+      <SEO 
+        title="About Us - Premium Corporate Housing Solutions"
+        description="Learn about Stillpoint Corporate Housing's mission to provide exceptional midterm and short-term accommodations for corporate clients with professional management and all-inclusive pricing."
+        canonicalUrl="/about"
+        structuredData={[
+          organizationSchema,
+          generateBreadcrumbSchema(breadcrumbs)
+        ]}
+      />
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
           About Stillpoint Corporate Housing
@@ -50,6 +67,7 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

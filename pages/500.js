@@ -1,10 +1,18 @@
 // pages/500.js
 import React from 'react';
 import Link from 'next/link';
+import SEO from '../components/SEO';
 
 export default function Custom500() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <>
+      <SEO 
+        title="Server Error - 500 Error"
+        description="We're experiencing technical difficulties. Please try again later or contact Stillpoint Corporate Housing support."
+        noindex={true}
+        nofollow={true}
+      />
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center text-primary-blue">500 - Server Error</h1>
       <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-center max-w-readable">An error occurred on the server. Please try again later.</p>
       <Link 
@@ -14,6 +22,7 @@ export default function Custom500() {
       >
         Return to Home
       </Link>
-    </div>
+      </div>
+    </>
   );
 }

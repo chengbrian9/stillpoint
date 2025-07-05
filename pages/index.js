@@ -1,9 +1,22 @@
 import properties from '../data/properties.json';
+import React from 'react';
 import PropertyCard from '../components/PropertyCard';
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { organizationSchema, localBusinessSchema, websiteSchema } from '../utils/structuredData';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Stillpoint Corporate Housing"
+        description="Premium midterm and short-term housing solutions for corporate clients"
+        structuredData={[
+          organizationSchema,
+          localBusinessSchema,
+          websiteSchema
+        ]}
+      />
       {/* Hero Section */}
       <div 
         className="relative w-full bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-[500px] flex items-center justify-center mb-8 sm:mb-12"

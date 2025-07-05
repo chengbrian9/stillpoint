@@ -1,5 +1,7 @@
 // pages/benefits.js
 import React from 'react';
+import SEO from '../components/SEO';
+import { serviceSchema, generateBreadcrumbSchema } from '../utils/structuredData';
 
 export default function Benefits() {
   const benefits = [
@@ -35,8 +37,24 @@ export default function Benefits() {
     }
   ];
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Corporate Benefits', url: '/benefits' }
+  ];
+
   return (
-    <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <>
+      <SEO 
+        title="Corporate Benefits - Why Choose Stillpoint Housing"
+        description="Discover the benefits of choosing Stillpoint Corporate Housing for your extended business stays. All-inclusive pricing, fully furnished accommodations, and professional management services."
+        canonicalUrl="/benefits"
+        keywords="corporate housing benefits, extended stay advantages, business travel accommodations, furnished corporate rentals"
+        structuredData={[
+          serviceSchema,
+          generateBreadcrumbSchema(breadcrumbs)
+        ]}
+      />
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
         Why Corporate Clients Choose Stillpoint
       </h1>
@@ -94,6 +112,7 @@ export default function Benefits() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

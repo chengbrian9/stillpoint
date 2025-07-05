@@ -1,5 +1,7 @@
 // pages/faqs.js
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { faqSchema, generateBreadcrumbSchema } from '../utils/structuredData';
 
 export default function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,8 +37,24 @@ export default function FAQs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Client FAQs', url: '/faqs' }
+  ];
+
   return (
-    <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <>
+      <SEO 
+        title="Corporate Client FAQs - Stillpoint Housing Questions"
+        description="Find answers to frequently asked questions about Stillpoint Corporate Housing services, booking process, amenities, and corporate account management."
+        canonicalUrl="/faqs"
+        keywords="corporate housing FAQ, extended stay questions, business travel housing, corporate accommodation answers"
+        structuredData={[
+          faqSchema,
+          generateBreadcrumbSchema(breadcrumbs)
+        ]}
+      />
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
         Corporate Client FAQs
       </h1>
@@ -86,6 +104,7 @@ export default function FAQs() {
           </a>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

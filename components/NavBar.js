@@ -19,7 +19,12 @@ export default function NavBar() {
   };
   
   return (
-    <nav className="bg-primary-blue border-b-4 border-primary-gold">
+    <nav 
+      id="main-navigation"
+      className="bg-primary-blue border-b-4 border-primary-gold"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
@@ -61,7 +66,8 @@ export default function NavBar() {
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-primary-blue focus:outline-none min-h-touch min-w-touch"
               aria-expanded={isMenuOpen}
-              aria-label="Toggle navigation menu"
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
               <span className="sr-only">Open main menu</span>
               {/* Hamburger icon */}
@@ -102,7 +108,12 @@ export default function NavBar() {
       </div>
       
       {/* Mobile Navigation Menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div 
+        id="mobile-menu"
+        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
+        role="menu"
+        aria-labelledby="mobile-menu-button"
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-primary-blue border-t border-primary-gold">
           {navItems.map((item) => (
             <Link
