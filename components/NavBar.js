@@ -19,13 +19,13 @@ export default function NavBar() {
   };
   
   return (
-    <nav className="bg-primary-blue border-b-4 border-primary-gold mb-4 sm:mb-8">
+    <nav className="bg-primary-blue border-b-4 border-primary-gold">
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center flex-shrink-0"
+            className="flex items-center flex-shrink-0 focus:outline-none"
             aria-label="Stillpoint Corporate Housing Home"
           >
             <img 
@@ -42,7 +42,7 @@ export default function NavBar() {
                 <Link 
                   key={item.path} 
                   href={item.path}
-                  className={`px-3 py-2 text-sm lg:text-base font-medium transition-all duration-200 min-h-touch flex items-center ${
+                  className={`px-3 py-2 text-sm lg:text-base font-medium transition-all duration-200 min-h-touch flex items-center focus:outline-none ${
                     router.pathname === item.path 
                       ? 'text-white border-b-2 border-primary-gold' 
                       : 'text-gray-300 hover:text-white hover:border-b-2 hover:border-gray-300'
@@ -59,7 +59,7 @@ export default function NavBar() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-primary-blue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white min-h-touch min-w-touch"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-primary-blue focus:outline-none min-h-touch min-w-touch"
               aria-expanded={isMenuOpen}
               aria-label="Toggle navigation menu"
             >
@@ -108,7 +108,7 @@ export default function NavBar() {
             <Link
               key={item.path}
               href={item.path}
-              className={`block px-3 py-3 text-base font-medium transition-colors duration-200 min-h-touch ${
+              className={`block px-3 py-3 text-base font-medium transition-colors duration-200 min-h-touch focus:outline-none ${
                 router.pathname === item.path
                   ? 'text-white bg-primary-gold bg-opacity-20 border-l-4 border-primary-gold'
                   : 'text-gray-300 hover:text-white hover:bg-primary-blue hover:bg-opacity-50'
