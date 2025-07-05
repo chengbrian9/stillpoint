@@ -44,13 +44,38 @@ export default function Home() {
       
       {/* Featured Properties Section */}
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12" id="listings">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 lg:mb-12 text-center text-primary-blue">
-          Featured Corporate Accommodations
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {properties.map((property, idx) => (
-            <PropertyCard key={property.id} property={property} idx={idx} />
-          ))}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-primary-blue">
+            Featured Corporate Accommodation
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover our premium furnished housing solution designed for extended business stays
+          </p>
+        </div>
+        
+        {/* Single Property Showcase */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-4xl">
+            {properties.map((property, idx) => (
+              <PropertyCard key={property.id} property={property} idx={idx} />
+            ))}
+          </div>
+        </div>
+        
+        {/* Additional Info */}
+        <div className="text-center mt-8 sm:mt-12">
+          <p className="text-sm sm:text-base text-gray-500 mb-4">
+            More properties coming soon
+          </p>
+          <a 
+            href="mailto:team@stillpointproperty.com" 
+            className="inline-flex items-center text-primary-blue hover:text-primary-blue/80 font-medium transition-colors duration-200"
+          >
+            <span>Contact us for custom housing solutions</span>
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
       

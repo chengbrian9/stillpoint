@@ -45,6 +45,16 @@ nav {
   font-family: 'Montserrat', Arial, sans-serif;
 }
 
+/* Scrollbar utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Accessibility improvements */
 .sr-only {
   position: absolute;
