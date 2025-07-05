@@ -8,7 +8,7 @@
   --color-white: #ffffff;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* If you have Adam.CG Pro, place it in /public/fonts/AdamCGPro.woff and uncomment below */
 /*
@@ -21,14 +21,19 @@
 }
 */
 
+/* Base styles with responsive considerations */
 body {
   font-family: 'Montserrat', 'AdamCGPro', Arial, sans-serif;
   background: var(--color-white);
   color: var(--color-blue);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'AdamCGPro', 'Montserrat', Arial, sans-serif;
+  line-height: 1.2;
   color: var(--color-blue);
 }
 
@@ -38,5 +43,88 @@ a {
 
 nav {
   font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Text truncation utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive image defaults */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly button styles */
+button, 
+a[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive container utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-blue: #000000;
+    --color-gold: #ffaa00;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

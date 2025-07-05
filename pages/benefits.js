@@ -36,27 +36,26 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: 'var(--color-blue)' }}>
+    <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
         Why Corporate Clients Choose Stillpoint
       </h1>
       
       <div className="max-w-5xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-10">
-          <p className="text-lg text-center mb-10 text-gray-700">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
+          <p className="text-base sm:text-lg text-center mb-8 sm:mb-10 text-gray-700 leading-relaxed">
             At Stillpoint Corporate Housing, we specialize in midterm and short-term accommodations for corporate clients.
             Here's why businesses trust us for their extended stay needs:
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {benefits.map((benefit, idx) => (
               <div 
                 key={idx} 
-                className="p-6 rounded-lg transition-all duration-300 hover:shadow-md"
-                style={{ borderLeft: '3px solid var(--color-gold)' }}
+                className="p-4 sm:p-6 rounded-lg transition-all duration-300 hover:shadow-md border-l-4 border-primary-gold"
               >
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--color-blue)' }}>
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{benefit.icon}</div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-primary-blue">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-700">{benefit.description}</p>

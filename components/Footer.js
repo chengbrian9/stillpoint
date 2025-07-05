@@ -5,40 +5,48 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer style={{
-      background: 'var(--color-blue)',
-      color: 'var(--color-white)',
-      padding: '2rem 0',
-      marginTop: '3rem',
-      borderTop: '4px solid var(--color-gold)'
-    }}>
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2" style={{ fontFamily: "'AdamCGPro', 'Montserrat', Arial, sans-serif" }}>
+    <footer className="bg-primary-blue text-white py-8 sm:py-12 lg:py-16 mt-12 sm:mt-16 lg:mt-20 border-t-4 border-primary-gold">
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6 sm:gap-8">
+          <div className="text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3">
               Stillpoint Property
             </h3>
-            <p className="text-sm opacity-80">
-              Exceptional real estate services since {currentYear}
+            <p className="text-sm sm:text-base opacity-80 leading-relaxed">
+              Exceptional corporate housing services
             </p>
           </div>
           
-          <div className="flex flex-col items-center md:items-end">
-            <p className="mb-2">Contact us</p>
+          <div className="text-center sm:text-right">
+            <p className="mb-2 sm:mb-3 text-sm sm:text-base font-medium">Contact us</p>
             <a 
               href="mailto:team@stillpointproperty.com" 
-              className="text-white hover:text-gold transition-colors"
-              style={{ color: 'var(--color-white)', textDecoration: 'underline' }}
-              onMouseOver={(e) => e.target.style.color = 'var(--color-gold)'}
-              onMouseOut={(e) => e.target.style.color = 'var(--color-white)'}
+              className="text-white hover:text-primary-gold transition-colors duration-200 text-sm sm:text-base underline focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1"
             >
               team@stillpointproperty.com
             </a>
           </div>
         </div>
         
-        <div className="mt-8 pt-6 border-t border-blue-700 text-center text-sm opacity-70">
-          <p>© {currentYear} Stillpoint Property. All rights reserved.</p>
+        {/* Additional Links Section */}
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-blue-700">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 text-sm">
+              <a href="/about" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+                About Us
+              </a>
+              <a href="/benefits" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+                Corporate Benefits
+              </a>
+              <a href="/faqs" className="hover:text-primary-gold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 focus:ring-offset-primary-blue rounded px-1 py-1">
+                Client FAQs
+              </a>
+            </div>
+            
+            <p className="text-xs sm:text-sm opacity-70 text-center sm:text-right">
+              © {currentYear} Stillpoint Property. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

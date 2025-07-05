@@ -36,45 +36,42 @@ export default function FAQs() {
   };
 
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: 'var(--color-blue)' }}>
+    <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
         Corporate Client FAQs
       </h1>
       
       <div className="max-w-3xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-10">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
           {faqs.map((faq, idx) => (
             <div key={idx} className="mb-4">
               <button
-                className="w-full text-left p-4 rounded-lg flex justify-between items-center focus:outline-none"
-                style={{ 
-                  backgroundColor: openIndex === idx ? 'var(--color-blue)' : '#f8f8f8',
-                  color: openIndex === idx ? 'white' : 'inherit',
-                  transition: 'all 0.3s ease'
-                }}
+                className={`w-full text-left p-3 sm:p-4 rounded-lg flex justify-between items-center transition-all duration-300 min-h-touch focus:outline-none focus:ring-2 focus:ring-primary-gold focus:ring-offset-2 ${
+                  openIndex === idx 
+                    ? 'bg-primary-blue text-white' 
+                    : 'bg-gray-50 text-gray-900 hover:bg-gray-100'
+                }`}
                 onClick={() => toggleFAQ(idx)}
+                aria-expanded={openIndex === idx}
               >
-                <span className="font-medium text-lg">{faq.question}</span>
-                <span>{openIndex === idx ? '−' : '+'}</span>
+                <span className="font-medium text-sm sm:text-base lg:text-lg pr-4">{faq.question}</span>
+                <span className="text-xl flex-shrink-0">{openIndex === idx ? '−' : '+'}</span>
               </button>
               
               {openIndex === idx && (
-                <div 
-                  className="p-4 bg-gray-50 rounded-b-lg"
-                  style={{ borderLeft: '3px solid var(--color-gold)' }}
-                >
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div className="p-3 sm:p-4 bg-gray-50 rounded-b-lg border-l-4 border-primary-gold">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-          <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--color-blue)' }}>
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 text-center">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-primary-blue">
             Still Have Questions?
           </h2>
-          <p className="mb-6 text-gray-700">
+          <p className="mb-4 sm:mb-6 text-sm sm:text-base text-gray-700 leading-relaxed">
             Our team is here to help with any additional questions you might have.
           </p>
           <a 
