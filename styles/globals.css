@@ -29,6 +29,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100%;
+  overscroll-behavior-y: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -125,6 +128,8 @@ nav {
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  height: 100%;
 }
 
 /* Responsive image defaults */
