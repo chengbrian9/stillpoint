@@ -23,15 +23,13 @@ export default function About() {
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-primary-blue">
-          About Stillpoint Corporate Housing
+          Where Corporate Serenity Meets Refined Hospitality
         </h1>
         
         <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10">
           <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-primary-blue">Our Story</h2>
           <p className="mb-6 text-gray-700">
-            Founded in 2020, Stillpoint Corporate Housing has established itself as a premier provider of midterm and short-term
-            accommodations for corporate clients. We specialize in stays of 30+ days, offering fully furnished, professionally
-            maintained properties that provide all the comforts of home with the convenience of a hotel.
+            Stillpoint Corporate Housing is your haven in the fast-paced world of business, where seamless professionalism and heartfelt comfort converge. Each accommodation is meticulously crafted to foster productivity and relaxation—merging the sophistication of executive living with the warmth of a personal retreat, delivering an unparalleled experience for corporate travelers seeking both efficiency and elegance.
           </p>
           
           <div className="mb-8 rounded-lg overflow-hidden">
@@ -44,9 +42,7 @@ export default function About() {
           
           <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-primary-blue">Our Mission</h2>
           <p className="mb-6 text-gray-700">
-            At Stillpoint Corporate Housing, our mission is to provide corporate clients with exceptional accommodations that truly feel like home.
-            We understand the challenges of extended business travel and relocations, which is why we've created living spaces that combine
-            comfort, convenience, and professional management to ensure a seamless experience for every client.
+            At the heart of our mission is a dedication to transforming extended stays into opportunities for growth and rejuvenation. We curate spaces that balance the demands of business with touches of refined charm, ensuring every guest feels supported, inspired, and truly at home in an environment designed for success and serenity.
           </p>
           
           <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-primary-blue">Our Team</h2>

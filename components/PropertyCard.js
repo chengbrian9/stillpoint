@@ -40,7 +40,88 @@ export default function PropertyCard({ property, idx }) {
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full overflow-hidden rounded-l-2xl lg:rounded-l-2xl lg:rounded-r-none">
+          {/* Mobile: Horizontal Scrolling Gallery with Peek */}
+          <div className="lg:hidden relative w-full h-full">
+            <div 
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide h-full"
+              style={{
+                scrollBehavior: 'smooth',
+                WebkitOverflowScrolling: 'touch'
+              }}
+            >
+              {images.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="flex-none snap-center relative"
+                  style={{
+                    width: index === images.length - 1 ? '100%' : 'calc(100% - 60px)',
+                    marginRight: index === images.length - 1 ? '0' : '12px'
+                  }}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <motion.img 
+                    src={image} 
+                    alt={`${property.title} - Image ${index + 1}`}
+                    className="w-full h-full object-cover rounded-2xl"
+                    loading="lazy"
+                    whileInView={{ scale: 1 }}
+                    initial={{ scale: 1.05 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  />
+                  
+                  {/* Gradient overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl" />
+                  
+                  {/* Image indicator dots */}
+                  {index === 0 && images.length > 1 && (
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                      {images.map((_, dotIndex) => (
+                        <motion.div
+                          key={dotIndex}
+                          className="w-2 h-2 rounded-full bg-white/60 backdrop-blur-sm"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: dotIndex * 0.1 + 0.5 }}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Peek indicator */}
+            {images.length > 1 && (
+              <motion.div 
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-white/40 to-white/80 rounded-full backdrop-blur-sm"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
+              />
+            )}
+            
+            {/* Swipe hint */}
+            <motion.div 
+              className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg flex items-center space-x-2"
+              initial={{ opacity: 0, scale: 0.8, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.4, ease: "easeOut" }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l4-4-4-4m6 8l4-4-4-4" />
+              </svg>
+              <span>Swipe</span>
+            </motion.div>
+          </div>
+          
+          {/* Desktop: Single Image with Hover Navigation */}
+          <div className="hidden lg:block relative w-full h-full overflow-hidden rounded-l-2xl">
             <motion.img 
               key={currentImageIndex}
               src={images[currentImageIndex]} 
@@ -57,7 +138,7 @@ export default function PropertyCard({ property, idx }) {
             {/* Elegant overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            {/* Navigation Arrows */}
+            {/* Desktop Navigation Arrows */}
             {images.length > 1 && (
               <>
                 <motion.button
@@ -101,7 +182,7 @@ export default function PropertyCard({ property, idx }) {
               </>
             )}
             
-            {/* Image Counter */}
+            {/* Desktop Image Counter */}
             {images.length > 1 && (
               <motion.div 
                 className="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-sm font-medium shadow-lg"
@@ -123,54 +204,54 @@ export default function PropertyCard({ property, idx }) {
                 </motion.span>
               </motion.div>
             )}
-          </div>
-          
-          {/* Thumbnail Strip */}
-          {images.length > 1 && (
-            <motion.div 
-              className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 opacity-0 group-hover:opacity-100"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-1">
-                {images.map((image, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`flex-shrink-0 w-14 h-10 rounded-lg overflow-hidden border-2 transition-all duration-300 focus:outline-none relative group/thumb ${
-                      index === currentImageIndex 
-                        ? 'border-white shadow-lg scale-110' 
-                        : 'border-white/40 hover:border-white/80 hover:scale-105'
-                    }`}
-                    whileHover={{ 
-                      scale: index === currentImageIndex ? 1.1 : 1.05,
-                      y: -2
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    style={{ transitionDelay: `${index * 50}ms` }}
-                  >
-                    <img 
-                      src={image} 
-                      alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover transition-all duration-300 group-hover/thumb:brightness-110"
-                    />
-                    {index === currentImageIndex && (
-                      <motion.div
-                        className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"
-                        layoutId="activeThumb"
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+            
+            {/* Desktop Thumbnail Strip */}
+            {images.length > 1 && (
+              <motion.div 
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 opacity-0 group-hover:opacity-100"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <div className="flex space-x-3 overflow-x-auto scrollbar-hide pb-1">
+                  {images.map((image, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`flex-shrink-0 w-14 h-10 rounded-lg overflow-hidden border-2 transition-all duration-300 focus:outline-none relative group/thumb ${
+                        index === currentImageIndex 
+                          ? 'border-white shadow-lg scale-110' 
+                          : 'border-white/40 hover:border-white/80 hover:scale-105'
+                      }`}
+                      whileHover={{ 
+                        scale: index === currentImageIndex ? 1.1 : 1.05,
+                        y: -2
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      style={{ transitionDelay: `${index * 50}ms` }}
+                    >
+                      <img 
+                        src={image} 
+                        alt={`Thumbnail ${index + 1}`}
+                        className="w-full h-full object-cover transition-all duration-300 group-hover/thumb:brightness-110"
                       />
-                    )}
-                  </motion.button>
-                ))}
-              </div>
-            </motion.div>
-          )}
+                      {index === currentImageIndex && (
+                        <motion.div
+                          className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"
+                          layoutId="activeThumb"
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        />
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </div>
         </motion.div>
         
         {/* Content Section */}
