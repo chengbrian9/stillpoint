@@ -27,10 +27,10 @@ export default function Home() {
       >
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight">
-            Stillpoint Corporate Housing
+            Stillpoint Property Group
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-readable mx-auto leading-relaxed">
-            Premium midterm and short-term housing solutions for corporate clients
+            Premium mid-term and short-term housing solutions for corporate clients
           </p>
           <a 
             href="#listings" 

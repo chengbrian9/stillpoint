@@ -263,10 +263,10 @@ export default function PropertyCard({ property, idx }) {
             {/* Property Details with Icons */}
             <div className="grid grid-cols-2 gap-6 mb-8">
               {[
-                { icon: 'users', label: 'Capacity', value: '4-6 Guests', delay: 0 },
-                { icon: 'building', label: 'Size', value: '2,400 sq ft', delay: 0.1 },
+                { icon: 'users', label: 'Capacity', value: '6-8 Guests', delay: 0 },
+                { icon: 'building', label: 'Size', value: '2,750 sq ft', delay: 0.1 },
                 { icon: 'bed', label: 'Bedrooms', value: '3 Bedrooms', delay: 0.2 },
-                { icon: 'calendar', label: 'Min Stay', value: '30+ Days', delay: 0.3 }
+                { icon: 'bath', label: 'Bathrooms', value: '2.5 Baths', delay: 0.3 }
               ].map((detail, index) => (
                 <motion.div 
                   key={detail.label}
@@ -301,9 +301,9 @@ export default function PropertyCard({ property, idx }) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15h8" />
                       </svg>
                     )}
-                    {detail.icon === 'calendar' && (
+                    {detail.icon === 'bath' && (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 12h16m-8-3v3m-9 4h18a1 1 0 001-1v-1a1 1 0 00-1-1H3a1 1 0 00-1 1v1a1 1 0 001 1zm3 4v1a2 2 0 002 2h8a2 2 0 002-2v-1" />
                       </svg>
                     )}
                   </motion.div>
