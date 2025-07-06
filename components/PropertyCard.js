@@ -1,6 +1,7 @@
 // components/PropertyCard.js
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import LuxuryButton from './LuxuryButton';
 
 export default function PropertyCard({ property, idx }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -13,6 +14,7 @@ export default function PropertyCard({ property, idx }) {
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -277,11 +279,11 @@ export default function PropertyCard({ property, idx }) {
                   whileHover={{ x: 4 }}
                 >
                   <motion.div 
-                    className="w-12 h-12 bg-gradient-to-br from-primary-blue to-blue-700 rounded-xl flex items-center justify-center shadow-lg group-hover/detail:shadow-xl"
+                    className="w-12 h-12 bg-gradient-to-r from-[#0d3b66] to-[#1e5f8b] rounded-xl flex items-center justify-center shadow-lg group-hover/detail:shadow-xl border-b-[2px] border-primary-gold"
                     whileHover={{ 
                       scale: 1.1, 
                       rotate: 5,
-                      background: 'linear-gradient(135deg, #0d3b66 0%, #1e5f8b 100%)'
+                      background: 'linear-gradient(135deg, #1e5f8b 0%, #0d3b66 100%)'
                     }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
@@ -317,7 +319,7 @@ export default function PropertyCard({ property, idx }) {
                       {detail.label}
                     </motion.p>
                     <motion.p 
-                      className="font-bold text-primary-blue text-lg group-hover/detail:text-blue-700 transition-colors duration-300"
+                      className="font-bold text-[#0d3b66] text-lg group-hover/detail:text-[#1e5f8b] transition-colors duration-300"
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: detail.delay + 0.3 }}
@@ -338,67 +340,30 @@ export default function PropertyCard({ property, idx }) {
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <motion.p 
-              className="text-sm text-gray-600 mb-4 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
+              className="text-gray-600 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
             >
               Interested in this premium corporate housing? Let's discuss your needs.
             </motion.p>
-            <motion.a 
-              href="mailto:info@example.com" 
-              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-blue to-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.02, 
-                y: -2,
-                boxShadow: "0 25px 50px -12px rgba(13, 59, 102, 0.4)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.4 }}
+            <LuxuryButton 
+              href="mailto:team@stillpointpropertygroup.com"
+              variant="primary"
+              size="medium"
+              icon={
+                <svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              }
             >
-              {/* Animated background gradient */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={false}
-              />
-              
-              {/* Shimmer effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '200%' }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-              />
-              
-              <motion.svg 
-                className="w-5 h-5 mr-3 relative z-10" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                whileHover={{ rotate: 5, scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </motion.svg>
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                Contact Us
-              </span>
-              
-              {/* Arrow animation */}
-              <motion.svg
-                className="w-4 h-4 ml-2 relative z-10 opacity-0 group-hover:opacity-100"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                initial={{ x: -10, opacity: 0 }}
-                whileHover={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </motion.svg>
-            </motion.a>
+              Contact Us
+            </LuxuryButton>
           </motion.div>
         </div>
       </div>

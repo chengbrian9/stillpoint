@@ -2,6 +2,7 @@ import properties from '../data/properties.json';
 import React from 'react';
 import PropertyCard from '../components/PropertyCard';
 import SEO from '../components/SEO';
+import LuxuryButton from '../components/LuxuryButton';
 import { motion } from 'framer-motion';
 import { organizationSchema, localBusinessSchema, websiteSchema } from '../utils/structuredData';
 
@@ -32,13 +33,13 @@ export default function Home() {
           <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-readable mx-auto leading-relaxed">
             Premium mid-term and short-term housing solutions for corporate clients
           </p>
-          <a 
-            href="#listings" 
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-primary-blue font-medium bg-white hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none"
-            style={{ borderBottom: '3px solid var(--color-gold)' }}
+          <LuxuryButton 
+            href="#listings"
+            variant="secondary"
+            size="medium"
           >
             View Listings
-          </a>
+          </LuxuryButton>
         </div>
       </div>
       
@@ -67,15 +68,20 @@ export default function Home() {
           <p className="text-sm sm:text-base text-gray-500 mb-4">
             More properties coming soon
           </p>
-          <a 
-            href="mailto:team@stillpointproperty.com" 
-            className="inline-flex items-center text-primary-blue hover:text-primary-blue/80 font-medium transition-colors duration-200"
-          >
-            <span>Contact us for custom housing solutions</span>
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <LuxuryButton 
+              href="mailto:team@stillpointproperty.com"
+              variant="secondary"
+              size="medium"
+              icon={
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              }
+            >
+              Contact Us
+            </LuxuryButton>
+          </div>
         </div>
       </div>
       
