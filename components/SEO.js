@@ -2,8 +2,8 @@
 import Head from 'next/head';
 
 export default function SEO({
-  title = 'Stillpoint Corporate Housing - Premium Corporate Accommodations',
-  description = 'Stillpoint Corporate Housing provides premium midterm and short-term accommodations for corporate clients. Fully furnished properties with 30+ day stays, all-inclusive pricing, and professional management.',
+  title = 'Stillpoint Property Group - Premium Corporate Accommodations',
+  description = 'Stillpoint Property Group provides premium mid-term and short-term accommodations for corporate clients. Fully furnished properties with 30+ day stays, all-inclusive pricing, and professional management.',
   keywords = 'corporate housing, corporate accommodations, extended stay, business travel, furnished apartments, temporary housing, corporate relocation, midterm rentals',
   canonicalUrl,
   ogImage = '/og-image.jpg',
@@ -12,7 +12,7 @@ export default function SEO({
   noindex = false,
   nofollow = false,
 }) {
-  const siteUrl = 'https://stillpointproperty.com'; // Replace with actual domain
+  const siteUrl = 'https://stillpointpropertygroup.com'; // Replace with actual domain
   const fullTitle = title.includes('Stillpoint') ? title : `${title} | Stillpoint Corporate Housing`;
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
@@ -39,11 +39,11 @@ export default function SEO({
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:image" content={fullOgImage} />
       <meta property="og:image:alt" content={title} />
-      <meta property="og:site_name" content="Stillpoint Corporate Housing" />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content="Stillpoint Property Group" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}
@@ -54,12 +54,16 @@ export default function SEO({
       <meta name="twitter:image:alt" content={title} />
       
       {/* Favicon and Icons */}
-      <link rel="icon" href="/logo.svg" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/logo.svg" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/logo.svg" />
-      <link rel="apple-touch-icon" href="/logo.svg" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
-      <meta name="theme-color" content="#1e40af" />
+      <meta name="theme-color" content="#0d3b66" />
+      
+      {/* Open Graph Image - Important for iMessage and social sharing */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       
       {/* Preconnect to External Domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

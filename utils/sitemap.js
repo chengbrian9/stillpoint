@@ -1,7 +1,7 @@
 // utils/sitemap.js
 
 export const generateSitemap = () => {
-  const baseUrl = 'https://stillpointproperty.com';
+  const baseUrl = 'https://stillpointpropertygroup.com';
   const currentDate = new Date().toISOString();
   
   const pages = [
@@ -45,7 +45,7 @@ ${pages.map(page => `  <url>
 };
 
 export const generateRobotsTxt = () => {
-  const baseUrl = 'https://stillpointproperty.com';
+  const baseUrl = 'https://stillpointpropertygroup.com';
   
   return `User-agent: *
 Allow: /
