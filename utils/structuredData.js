@@ -4,15 +4,15 @@
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Stillpoint Corporate Housing",
+  "name": "Stillpoint Property Group",
   "description": "Premium corporate housing and extended stay accommodations for business travelers and corporate clients.",
-  "url": "https://stillpointproperty.com",
-  "logo": "https://stillpointproperty.com/logo.svg",
+  "url": "https://stillpointpropertygroup.com",
+  "logo": "https://stillpointpropertygroup.com/logo.svg",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone
     "contactType": "customer service",
-    "email": "team@stillpointproperty.com",
+    "email": "team@stillpointpropertygroup.com",
     "availableLanguage": "English"
   },
   "address": {
@@ -23,8 +23,8 @@ export const organizationSchema = {
   },
   "sameAs": [
     // Add social media URLs when available
-    // "https://www.facebook.com/stillpointhousing",
-    // "https://www.linkedin.com/company/stillpoint-corporate-housing"
+    // "https://www.facebook.com/stillpointpropertygroup",
+    // "https://www.linkedin.com/company/stillpoint-property-group"
   ]
 };
 
@@ -32,11 +32,11 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "Stillpoint Corporate Housing",
+  "name": "Stillpoint Property Group",
   "description": "Specialized corporate housing provider offering fully furnished accommodations for extended business stays of 30+ days.",
-  "url": "https://stillpointproperty.com",
+  "url": "https://stillpointpropertygroup.com",
   "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone
-  "email": "team@stillpointproperty.com",
+  "email": "team@stillpointpropertygroup.com",
   "priceRange": "$$$",
   "paymentAccepted": ["Cash", "Credit Card", "Corporate Account"],
   "currenciesAccepted": "USD",
@@ -89,8 +89,8 @@ export const serviceSchema = {
   "description": "Premium corporate housing and extended stay accommodations with all-inclusive pricing and professional management.",
   "provider": {
     "@type": "Organization",
-    "name": "Stillpoint Corporate Housing",
-    "url": "https://stillpointproperty.com"
+    "name": "Stillpoint Property Group",
+    "url": "https://stillpointpropertygroup.com"
   },
   "serviceType": "Corporate Housing",
   "areaServed": {
@@ -161,7 +161,7 @@ export const generateBreadcrumbSchema = (breadcrumbs) => ({
     "@type": "ListItem",
     "position": index + 1,
     "name": crumb.name,
-    "item": `https://stillpointproperty.com${crumb.url}`
+    "item": `https://stillpointpropertygroup.com${crumb.url}`
   }))
 });
 
@@ -169,14 +169,14 @@ export const generateBreadcrumbSchema = (breadcrumbs) => ({
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Stillpoint Corporate Housing",
+  "name": "Stillpoint Property Group",
   "description": "Premium corporate housing and extended stay accommodations for business travelers.",
-  "url": "https://stillpointproperty.com",
+  "url": "https://stillpointpropertygroup.com",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://stillpointproperty.com/search?q={search_term_string}"
+      "urlTemplate": "https://stillpointpropertygroup.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }

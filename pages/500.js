@@ -1,6 +1,5 @@
 // pages/500.js
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import LuxuryButton from '../components/LuxuryButton';
@@ -10,7 +9,8 @@ export default function Custom500() {
     <>
       <SEO 
         title="Server Error - 500 Error"
-        description="We're experiencing technical difficulties. Please try again later or contact Stillpoint Corporate Housing support."
+        description="We're experiencing technical difficulties. Please try again later or contact Stillpoint Property Group support."
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         noindex={true}
         nofollow={true}
       />

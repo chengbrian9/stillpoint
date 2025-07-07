@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6 sm:gap-8">
           <div className="text-center sm:text-left">
             <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3">
-              Stillpoint Property
+              Stillpoint Property Group
             </h3>
             <p className="text-sm sm:text-base opacity-80 leading-relaxed">
               Exceptional corporate housing services
@@ -24,10 +24,10 @@ export default function Footer() {
           <div className="text-center sm:text-right">
             <p className="mb-2 sm:mb-3 text-sm sm:text-base font-medium">Contact us</p>
             <a 
-              href="mailto:team@stillpointproperty.com" 
+              href="mailto:team@stillpointpropertygroup.com" 
               className="text-white hover:text-primary-gold transition-colors duration-200 text-sm sm:text-base underline focus:outline-none rounded px-1 py-1"
             >
-              team@stillpointproperty.com
+              team@stillpointpropertygroup.com
             </a>
           </div>
         </div>

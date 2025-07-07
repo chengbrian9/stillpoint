@@ -1,6 +1,5 @@
 // pages/404.js
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import LuxuryButton from '../components/LuxuryButton';
@@ -10,7 +9,8 @@ export default function Custom404() {
     <>
       <SEO 
         title="Page Not Found - 404 Error"
-        description="The page you're looking for doesn't exist. Return to Stillpoint Corporate Housing homepage to find premium corporate accommodations."
+        description="The page you're looking for doesn't exist. Return to Stillpoint Property Group homepage to find premium corporate accommodations."
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         noindex={true}
         nofollow={true}
       />

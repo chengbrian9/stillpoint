@@ -15,8 +15,9 @@ export default function Home() {
       transition={{ duration: 0.6 }}
     >
       <SEO 
-        title="Stillpoint Corporate Housing"
-        description="Premium midterm and short-term housing solutions for corporate clients"
+        title="Stillpoint Property Group"
+        description="Premium mid-term and short-term housing solutions for corporate clients"
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         structuredData={[
           organizationSchema,
           localBusinessSchema,
@@ -140,7 +141,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 1.4 }}
           >
             <LuxuryButton 
-              href="mailto:team@stillpointproperty.com"
+              href="mailto:team@stillpointpropertygroup.com"
               variant="outline"
               size="medium"
               icon={
@@ -195,7 +196,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <LuxuryButton 
-              href="mailto:team@stillpointproperty.com"
+              href="mailto:team@stillpointpropertygroup.com"
               variant="primary"
               size="large"
             >

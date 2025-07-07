@@ -46,9 +46,10 @@ export default function Benefits() {
   return (
     <>
       <SEO 
-        title="Corporate Benefits - Why Choose Stillpoint Housing"
-        description="Discover the benefits of choosing Stillpoint Corporate Housing for your extended business stays. All-inclusive pricing, fully furnished accommodations, and professional management services."
+        title="Corporate Benefits - Why Choose Stillpoint Property Group"
+        description="Discover the benefits of choosing Stillpoint Property Group for your extended business stays. All-inclusive pricing, fully furnished accommodations, and professional management services."
         canonicalUrl="/benefits"
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         keywords="corporate housing benefits, extended stay advantages, business travel accommodations, furnished corporate rentals"
         structuredData={[
           serviceSchema,
@@ -67,7 +68,7 @@ export default function Benefits() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        Why Corporate Clients Choose Stillpoint
+        Why Corporate Clients Choose Stillpoint Property Group
       </motion.h1>
       
       <motion.div 
@@ -89,7 +90,7 @@ export default function Benefits() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            At Stillpoint Corporate Housing, we specialize in midterm and short-term accommodations for corporate clients.
+            At Stillpoint Property Group, we specialize in mid-term and short-term accommodations for corporate clients.
             Here's why businesses trust us for their extended stay needs:
           </motion.p>
           

@@ -1,6 +1,6 @@
-# Stillpoint Corporate Housing
+# Stillpoint Property Group
 
-A professional corporate housing website built with Next.js, Tailwind CSS, and Framer Motion. Focused on providing midterm and short-term accommodations for corporate clients.
+A professional corporate housing website built with Next.js, Tailwind CSS, and Framer Motion. Focused on providing mid-term and short-term accommodations for corporate clients.
 
 ## Getting Started
 

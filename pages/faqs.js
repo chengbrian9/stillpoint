@@ -31,7 +31,7 @@ export default function FAQs() {
     },
     {
       question: "How do I book a corporate housing unit with Stillpoint?",
-      answer: "Simply contact us via email at team@stillpointproperty.com with your requirements including desired location, length of stay, number of bedrooms needed, and any special requests. We'll respond promptly with available options and guide you through our simple booking process."
+      answer: "Simply contact us via email at team@stillpointpropertygroup.com with your requirements including desired location, length of stay, number of bedrooms needed, and any special requests. We'll respond promptly with available options and guide you through our simple booking process."
     }
   ];
 
@@ -47,9 +47,10 @@ export default function FAQs() {
   return (
     <>
       <SEO 
-        title="Corporate Client FAQs - Stillpoint Housing Questions"
-        description="Find answers to frequently asked questions about Stillpoint Corporate Housing services, booking process, amenities, and corporate account management."
+        title="Corporate Client FAQs - Stillpoint Property Group Questions"
+        description="Find answers to frequently asked questions about Stillpoint Property Group services, booking process, amenities, and corporate account management."
         canonicalUrl="/faqs"
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         keywords="corporate housing FAQ, extended stay questions, business travel housing, corporate accommodation answers"
         structuredData={[
           faqSchema,
@@ -166,7 +167,7 @@ export default function FAQs() {
             transition={{ duration: 0.6, delay: 1.5 }}
           >
             <LuxuryButton 
-              href="mailto:team@stillpointproperty.com"
+              href="mailto:team@stillpointpropertygroup.com"
               variant="primary"
               size="medium"
             >

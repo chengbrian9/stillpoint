@@ -1,14 +1,14 @@
 // pages/_error.js
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
 
 function Error({ statusCode }) {
   return (
     <>
       <SEO 
-        title={`${statusCode ? `${statusCode} Error` : 'Client Error'} - Stillpoint Corporate Housing`}
-        description={`${statusCode ? `Server error ${statusCode}` : 'Client error'} occurred. Please try again or contact Stillpoint Corporate Housing support.`}
+        title={`${statusCode ? `${statusCode} Error` : 'Client Error'} - Stillpoint Property Group`}
+        description={`${statusCode ? `Server error ${statusCode}` : 'Client error'} occurred. Please try again or contact Stillpoint Property Group support.`}
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         noindex={true}
         nofollow={true}
       />

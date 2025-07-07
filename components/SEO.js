@@ -4,16 +4,16 @@ import Head from 'next/head';
 export default function SEO({
   title = 'Stillpoint Property Group - Premium Corporate Accommodations',
   description = 'Stillpoint Property Group provides premium mid-term and short-term accommodations for corporate clients. Fully furnished properties with 30+ day stays, all-inclusive pricing, and professional management.',
-  keywords = 'corporate housing, corporate accommodations, extended stay, business travel, furnished apartments, temporary housing, corporate relocation, midterm rentals',
+  keywords = 'corporate housing, corporate accommodations, extended stay, business travel, furnished apartments, temporary housing, corporate relocation, mid-term rentals',
   canonicalUrl,
-  ogImage = '/og-image.jpg',
+  ogImage = '/Stillpoint Property Group Logo_B2.jpg',
   ogType = 'website',
   structuredData,
   noindex = false,
   nofollow = false,
 }) {
   const siteUrl = 'https://stillpointpropertygroup.com'; // Replace with actual domain
-  const fullTitle = title.includes('Stillpoint') ? title : `${title} | Stillpoint Corporate Housing`;
+  const fullTitle = title.includes('Stillpoint') ? title : `${title} | Stillpoint Property Group`;
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
@@ -23,7 +23,7 @@ export default function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Stillpoint Corporate Housing" />
+      <meta name="author" content="Stillpoint Property Group" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
       
@@ -64,6 +64,13 @@ export default function SEO({
       {/* Open Graph Image - Important for iMessage and social sharing */}
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:secure_url" content={fullOgImage} />
+      
+      {/* Apple-specific meta tags for better iMessage previews */}
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="Stillpoint Property Group" />
       
       {/* Preconnect to External Domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

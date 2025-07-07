@@ -52,11 +52,11 @@ export default function NavBar() {
             <Link 
               href="/" 
               className="flex items-center flex-shrink-0 focus:outline-none focus-luxury"
-              aria-label="Stillpoint Corporate Housing Home"
+              aria-label="Stillpoint Property Group Home"
             >
               <motion.img 
                 src="/3.svg" 
-                alt="Stillpoint Corporate Housing Logo" 
+                alt="Stillpoint Property Group Logo" 
                 className="h-12 sm:h-16 lg:h-20 w-auto transition-luxury"
                 whileHover={{ 
                   scale: 1.05,

@@ -14,8 +14,9 @@ export default function About() {
     <>
       <SEO 
         title="About Us - Premium Corporate Housing Solutions"
-        description="Learn about Stillpoint Corporate Housing's mission to provide exceptional midterm and short-term accommodations for corporate clients with professional management and all-inclusive pricing."
+        description="Learn about Stillpoint Property Group's mission to provide exceptional mid-term and short-term accommodations for corporate clients with professional management and all-inclusive pricing."
         canonicalUrl="/about"
+        ogImage="/Stillpoint Property Group Logo_B2.jpg"
         structuredData={[
           organizationSchema,
           generateBreadcrumbSchema(breadcrumbs)
@@ -63,7 +64,7 @@ export default function About() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Stillpoint Corporate Housing is your haven in the fast-paced world of business, where seamless professionalism and heartfelt comfort converge. Each accommodation is meticulously crafted to foster productivity and relaxation—merging the sophistication of executive living with the warmth of a personal retreat, delivering an unparalleled experience for corporate travelers seeking both efficiency and elegance.
+            Stillpoint Property Group is your haven in the fast-paced world of business, where seamless professionalism and heartfelt comfort converge. Each accommodation is meticulously crafted to foster productivity and relaxation—merging the sophistication of executive living with the warmth of a personal retreat, delivering an unparalleled experience for corporate travelers seeking both efficiency and elegance.
           </motion.p>
           
           <motion.div 
@@ -97,46 +98,6 @@ export default function About() {
           >
             At the heart of our mission is a dedication to transforming extended stays into opportunities for growth and rejuvenation. We curate spaces that balance the demands of business with touches of refined charm, ensuring every guest feels supported, inspired, and truly at home in an environment designed for success and serenity.
           </motion.p>
-          
-          <motion.h2 
-            className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-[#0d3b66]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            Our Team
-          </motion.h2>
-          <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-          >
-            {[
-              { name: 'Jane Smith', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80' },
-              { name: 'Michael Johnson', role: 'Corporate Relations Director', image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=300&q=80' },
-              { name: 'Sarah Williams', role: 'Guest Experience Manager', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80' }
-            ].map((member, idx) => (
-              <motion.div 
-                key={idx} 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 + idx * 0.1 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              >
-                <motion.div 
-                  className="rounded-full overflow-hidden w-32 h-32 mx-auto mb-4"
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(13, 59, 102, 0.3)" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                </motion.div>
-                <h3 className="font-semibold text-base sm:text-lg text-[#0d3b66]">{member.name}</h3>
-                <p className="text-xs sm:text-sm text-gray-600">{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </motion.div>
       </motion.div>
