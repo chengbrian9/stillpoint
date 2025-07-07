@@ -53,12 +53,10 @@ export default function SEO({
       <meta name="twitter:image" content={fullOgImage} />
       <meta name="twitter:image:alt" content={title} />
       
-      {/* Favicon and Icons */}
+      {/* Site Icons */}
       <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-      <link rel="alternate icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="alternate icon" href="/logo.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/logo.png" />
       <link rel="mask-icon" href="/logo.svg" color="#0d3b66" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="theme-color" content="#0d3b66" />
