@@ -140,39 +140,37 @@ export default function PropertyCard({ property, idx }) {
               <>
                 <motion.button
                   onClick={prevImage}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-xl opacity-0 group-hover:opacity-100 focus:outline-none"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#0d3b66] to-[#1e5f8b] backdrop-blur-sm rounded-full p-3 shadow-xl opacity-0 group-hover:opacity-100 focus:outline-none border-b-[1px] border-[#bf9e4b]"
                   aria-label="Previous image"
                   whileHover={{ 
                     scale: 1.1, 
-                    backgroundColor: "rgba(255, 255, 255, 0.95)",
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                    boxShadow: "0 20px 25px -5px rgba(13, 59, 102, 0.2), 0 10px 10px -5px rgba(13, 59, 102, 0.1)"
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                 >
-                  <svg className="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </motion.button>
                 <motion.button
                   onClick={nextImage}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-xl opacity-0 group-hover:opacity-100 focus:outline-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#0d3b66] to-[#1e5f8b] backdrop-blur-sm rounded-full p-3 shadow-xl opacity-0 group-hover:opacity-100 focus:outline-none border-b-[1px] border-[#bf9e4b]"
                   aria-label="Next image"
                   whileHover={{ 
                     scale: 1.1, 
-                    backgroundColor: "rgba(255, 255, 255, 0.95)",
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                    boxShadow: "0 20px 25px -5px rgba(13, 59, 102, 0.2), 0 10px 10px -5px rgba(13, 59, 102, 0.1)"
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                   initial={{ x: 10, opacity: 0 }}
                   animate={{ x: 0, opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                 >
-                  <svg className="w-5 h-5 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </motion.button>
@@ -279,13 +277,13 @@ export default function PropertyCard({ property, idx }) {
                   whileHover={{ x: 4 }}
                 >
                   <motion.div 
-                    className="w-12 h-12 bg-gradient-to-r from-[#0d3b66] to-[#1e5f8b] rounded-xl flex items-center justify-center shadow-lg group-hover/detail:shadow-xl border-b-[2px] border-primary-gold"
+                    className="w-12 h-12 bg-gradient-to-r from-[#0d3b66] to-[#1e5f8b] rounded-xl flex items-center justify-center shadow-lg group-hover/detail:shadow-xl border-b-[2px] border-[#bf9e4b]"
                     whileHover={{ 
                       scale: 1.1, 
                       rotate: 5,
                       background: 'linear-gradient(135deg, #1e5f8b 0%, #0d3b66 100%)'
                     }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                   >
                     {detail.icon === 'users' && (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

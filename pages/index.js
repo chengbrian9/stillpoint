@@ -8,7 +8,12 @@ import { organizationSchema, localBusinessSchema, websiteSchema } from '../utils
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <motion.div 
+      className="min-h-screen bg-gray-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
       <SEO 
         title="Stillpoint Corporate Housing"
         description="Premium midterm and short-term housing solutions for corporate clients"
@@ -19,59 +24,124 @@ export default function Home() {
         ]}
       />
       {/* Hero Section */}
-      <div 
+      <motion.div 
         className="relative w-full bg-cover bg-center h-64 sm:h-80 md:h-96 lg:h-[500px] flex items-center justify-center mb-8 sm:mb-12"
         style={{
           backgroundImage: 'url("/Asset 2.webp")',
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight">
-            Stillpoint Property Group
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-readable mx-auto leading-relaxed">
-            Premium mid-term and short-term housing solutions for corporate clients
-          </p>
-          <LuxuryButton 
-            href="#listings"
-            variant="secondary"
-            size="medium"
+        <motion.div 
+          className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <motion.h1 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            View Listings
-          </LuxuryButton>
-        </div>
-      </div>
+            Stillpoint Property Group
+          </motion.h1>
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-readable mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            Premium mid-term and short-term housing solutions for corporate clients
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <LuxuryButton 
+              href="#listings"
+              variant="secondary"
+              size="medium"
+            >
+              View Listings
+            </LuxuryButton>
+          </motion.div>
+        </motion.div>
+      </motion.div>
       
       {/* Featured Properties Section */}
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12" id="listings">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-primary-blue">
+      <motion.div 
+        className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12" 
+        id="listings"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <motion.div 
+          className="text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <motion.h2 
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-[#0d3b66]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             Featured Corporate Accommodation
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             Discover our premium furnished housing solution designed for extended business stays
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Single Property Showcase */}
-        <div className="flex justify-center">
+        <motion.div 
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <div className="w-full max-w-4xl">
             {properties.map((property, idx) => (
               <PropertyCard key={property.id} property={property} idx={idx} />
             ))}
           </div>
-        </div>
+        </motion.div>
         
         {/* Additional Info */}
-        <div className="text-center mt-8 sm:mt-12">
-          <p className="text-sm sm:text-base text-gray-500 mb-4">
+        <motion.div 
+          className="text-center mt-8 sm:mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <motion.p 
+            className="text-sm sm:text-base text-gray-500 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+          >
             More properties coming soon
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+          >
             <LuxuryButton 
               href="mailto:team@stillpointproperty.com"
-              variant="secondary"
+              variant="outline"
               size="medium"
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,28 +151,59 @@ export default function Home() {
             >
               Contact Us
             </LuxuryButton>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
       
       {/* Call to Action */}
-      <div className="bg-white py-12 sm:py-16 lg:py-20 mt-8 sm:mt-12">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-primary-blue">
-            Corporate Clients: Your Home Away From Home
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-readable mx-auto text-gray-700 leading-relaxed">
-            We offer fully furnished, professionally managed accommodations for stays of 30+ days. Perfect for relocations, extended business trips, and corporate projects.
-          </p>
-          <a 
-            href="mailto:team@stillpointproperty.com" 
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-md text-white font-medium bg-primary-blue hover:bg-primary-blue/90 transition-colors duration-200 text-sm sm:text-base min-h-touch focus:outline-none"
-            style={{ borderBottom: '3px solid var(--color-gold)' }}
+      <motion.div 
+        className="bg-white py-12 sm:py-16 lg:py-20 mt-8 sm:mt-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        <motion.div 
+          className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <motion.h2 
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-[#0d3b66]"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            Contact Us Today
-          </a>
-        </div>
-      </div>
-    </div>
+            Corporate Clients: Your Home Away From Home
+          </motion.h2>
+          <motion.p 
+            className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-readable mx-auto text-gray-700 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            We offer fully furnished, professionally managed accommodations for stays of 30+ days. Perfect for relocations, extended business trips, and corporate projects.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <LuxuryButton 
+              href="mailto:team@stillpointproperty.com"
+              variant="primary"
+              size="large"
+            >
+              Contact Us Today
+            </LuxuryButton>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
