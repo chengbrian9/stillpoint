@@ -35,7 +35,7 @@ export default function PropertyCard({ property, idx }) {
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.8)'
       }}
     >
-      <div className="flex flex-col lg:flex-row min-h-[400px] lg:min-h-[350px]">
+      <div className="flex flex-col lg:flex-row min-h-[400px] lg:h-[500px]">
         {/* Image Gallery Section */}
         <motion.div 
           className="relative lg:w-1/2 h-64 lg:h-auto group"
@@ -250,18 +250,20 @@ export default function PropertyCard({ property, idx }) {
         </motion.div>
         
         {/* Content Section */}
-        <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-primary-blue">
-              {property.title}
-            </h2>
-            
-            <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
-              {property.description}
-            </p>
+        <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-primary-blue">
+                {property.title}
+              </h2>
+              
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                {property.description}
+              </p>
+            </div>
             
             {/* Property Details with Icons */}
-            <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-2 gap-6">
               {[
                 { icon: 'users', label: 'Capacity', value: '6-8 Guests', delay: 0 },
                 { icon: 'building', label: 'Size', value: '2,750 sq ft', delay: 0.1 },
@@ -329,40 +331,6 @@ export default function PropertyCard({ property, idx }) {
               ))}
             </div>
           </div>
-          
-          {/* Contact Section */}
-          <motion.div 
-            className="mt-auto pt-6 border-t border-gray-100"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <motion.p 
-              className="text-gray-600 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-            >
-              Interested in this premium corporate housing? Let's discuss your needs.
-            </motion.p>
-            <LuxuryButton 
-              href="mailto:team@stillpointpropertygroup.com"
-              variant="primary"
-              size="medium"
-              icon={
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              }
-            >
-              Contact Us
-            </LuxuryButton>
-          </motion.div>
         </div>
       </div>
     </motion.div>

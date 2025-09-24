@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Fremont Family Home",
-    "description": "Spacious and comfortable corporate housing perfect for extended stays. This beautifully furnished home offers all the amenities needed for business travelers and corporate clients seeking a home-away-from-home experience.",
+    "title": "Fremont Family Oasis",
+    "description": "Come relax in this spacious 3-bed, 2.5-bath Fremont retreat with a private patio, heated pool, and grill—perfect for sunny Bay Area days.",
     "image": "/bay1.jpeg",
     "gallery": [
       "/bay1.jpeg",
@@ -12,6 +12,20 @@
       "/bay5.jpeg",
       "/bay6.jpeg",
       "/bay7.jpeg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Quirky Hoboken Apartment",
+    "description": "Discover the charm of Hoboken from this stylish, centrally located bedroom just steps from the PATH station.",
+    "image": "/bedford5.jpeg",
+    "gallery": [
+      "/bedford5.jpeg",
+      "/bedford2.jpeg",
+      "/bedford3.jpeg",
+      "/bedford6.jpeg",
+      "/bedford1.jpeg",
+      "/bedford4.jpeg"
     ]
   }
 ]

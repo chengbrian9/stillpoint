@@ -93,7 +93,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Featured Corporate Accommodation
+            Premium Corporate Accommodations
           </motion.h2>
           <motion.p 
             className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto"
@@ -101,58 +101,32 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Discover our premium furnished housing solution designed for extended business stays
+            Explore our curated collection of fully furnished properties designed for extended business stays
           </motion.p>
         </motion.div>
         
-        {/* Single Property Showcase */}
+        {/* Properties List */}
         <motion.div 
-          className="flex justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="space-y-8 lg:space-y-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <div className="w-full max-w-4xl">
-            {properties.map((property, idx) => (
-              <PropertyCard key={property.id} property={property} idx={idx} />
-            ))}
-          </div>
-        </motion.div>
-        
-        {/* Additional Info */}
-        <motion.div 
-          className="text-center mt-8 sm:mt-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <motion.p 
-            className="text-sm sm:text-base text-gray-500 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
-          >
-            More properties coming soon
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
-          >
-            <LuxuryButton 
-              href="mailto:team@stillpointpropertygroup.com"
-              variant="outline"
-              size="medium"
-              icon={
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              }
+          {properties.map((property, idx) => (
+            <motion.div
+              key={property.id}
+              initial={{ opacity: 0, y: 40, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.8 + (idx * 0.3), 
+                ease: [0.25, 0.46, 0.45, 0.94] 
+              }}
+              className="max-w-6xl mx-auto"
             >
-              Contact Us
-            </LuxuryButton>
-          </motion.div>
+              <PropertyCard property={property} idx={idx} />
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
       
