@@ -264,12 +264,29 @@ export default function PropertyCard({ property, idx }) {
             
             {/* Property Details with Icons */}
             <div className="grid grid-cols-2 gap-6">
-              {[
-                { icon: 'users', label: 'Capacity', value: '6-8 Guests', delay: 0 },
-                { icon: 'building', label: 'Size', value: '2,750 sq ft', delay: 0.1 },
-                { icon: 'bed', label: 'Bedrooms', value: '3 Bedrooms', delay: 0.2 },
-                { icon: 'bath', label: 'Bathrooms', value: '2.5 Baths', delay: 0.3 }
-              ].map((detail, index) => (
+              {(() => {
+                // Property-specific details
+                const getPropertyDetails = (propertyTitle) => {
+                  if (propertyTitle.includes('Hoboken')) {
+                    return [
+                      { icon: 'users', label: 'Capacity', value: '6-8 Guests', delay: 0 },
+                      { icon: 'building', label: 'Size', value: '1,100 sq ft', delay: 0.1 },
+                      { icon: 'bed', label: 'Bedrooms', value: '4 Bedrooms', delay: 0.2 },
+                      { icon: 'bath', label: 'Bathrooms', value: '2 Baths', delay: 0.3 }
+                    ];
+                  } else {
+                    // Default for Fremont and other properties
+                    return [
+                      { icon: 'users', label: 'Capacity', value: '6-8 Guests', delay: 0 },
+                      { icon: 'building', label: 'Size', value: '2,750 sq ft', delay: 0.1 },
+                      { icon: 'bed', label: 'Bedrooms', value: '3 Bedrooms', delay: 0.2 },
+                      { icon: 'bath', label: 'Bathrooms', value: '2.5 Baths', delay: 0.3 }
+                    ];
+                  }
+                };
+                
+                return getPropertyDetails(property.title);
+              })().map((detail, index) => (
                 <motion.div 
                   key={detail.label}
                   className="flex items-center space-x-4 group/detail"
